@@ -1,0 +1,15 @@
+#!/bin/bash 
+
+echo " Download prometheus binaries"
+if [ -e /home/ec2-user/prometheus-2.53.1.linux-amd64.tar.gz];
+then 
+ 
+   echo " file is already so need to download "
+   tar -zxvf /home/ec2-user/prometheus-2.53.1.linux-amd64.tar.gz
+else 
+  echo " Binaries does not excit in the system have to download "
+  wget https://github.com/prometheus/prometheus/releases/download/v2.53.1/prometheus-2.53.1.linux-amd64.tar.gz
+  tar -zxvf /home/ec2-user/prometheus-2.53.1.linux-amd64.tar.gz
+echo " File haas been extracted you can start prometheus..!"
+
+fi 
